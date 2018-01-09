@@ -1,0 +1,172 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>StandUp Meeting</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div align="center">
+
+    <ion-item>
+      <ion-label>Nº de Participantes</ion-label>
+      <ion-select [(ngModel)]="participantes">
+        <ion-option value="2">2</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Tempo de Reunião</ion-label>
+      <ion-select [(ngModel)]="reuniao">
+        <ion-option value="5">05:00 min</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </div>
+
+  <br>
+  <div align="center">
+
+    <button ion-button round color="secondary" (click)="startCounter()">COMEÇAR!</button>
+
+  </div>
+
+  <br>
+
+  <div>
+    <!-- TEMPO TOTAL -->
+    <ion-icon left name="timer">\n Tempo Total</ion-icon>
+    <br> {{tempo_total}}
+    <progress-bar [progress]="loadProgress"></progress-bar>
+
+
+    <!-- 1º PARTICIPANTE -->
+    <ion-icon name="person">\n 1º Participante</ion-icon>
+
+    <br>
+
+    <label class="tempo1-numero">{{this.tempo1_participante}}</label>
+
+    <br>
+
+    <label class="tempo1-seta1">{{this.seta}}</label>
+
+    <label>{{this.tempo2_participante}}</label>
+
+    <br>
+
+    <label class="tempo1-seta1">{{this.seta}}</label>
+
+    <label class="tempo1-seta2">{{this.seta}}</label>
+
+    <label>{{this.tempo3_participante}}</label>
+
+    <br>
+
+    <label class="tempo1-seta1">{{this.seta}}</label>
+
+    <label class="tempo1-seta2">{{this.seta}}</label>
+
+    <label class="tempo1-seta3">{{this.seta}}</label>
+
+    <label>{{this.tempo4_participante}}</label>
+
+    <br>
+
+    <label class="tempo1-seta1">{{this.seta}}</label>
+
+    <label class="tempo1-seta2">{{this.seta}}</label>
+
+    <label class="tempo1-seta3">{{this.seta}}</label>
+
+    <label class="tempo1-seta4">{{this.seta}}</label>
+
+    <label>{{this.tempo5_participante}}</label>
+
+    <br>
+
+    <label class="tempo1-seta1">{{this.seta}}</label>
+
+    <label class="tempo1-seta2">{{this.seta}}</label>
+
+    <label class="tempo1-seta3">{{this.seta}}</label>
+
+    <label class="tempo1-seta4">{{this.seta}}</label>
+
+    <label class="tempo1-seta5">{{this.seta}}</label>
+
+    <progress-bar [progress]="loadProgress2"></progress-bar>
+
+
+
+
+    <!-- 2º PARTICIPANTE! -->
+    <ion-icon name="person">\n 2º Participante</ion-icon>
+
+    <br>
+
+    <label class="tempo1-numero">{{this.tempo1_participante}}</label>
+
+    <br>
+
+    <label class="tempo1-seta1">{{this.seta}}</label>
+
+    <label>{{this.tempo2_participante}}</label>
+
+    <br>
+
+    <label class="tempo1-seta1">{{this.seta}}</label>
+
+    <label class="tempo1-seta2">{{this.seta}}</label>
+
+    <label>{{this.tempo3_participante}}</label>
+
+    <br>
+
+    <label class="tempo1-seta1">{{this.seta}}</label>
+
+    <label class="tempo1-seta2">{{this.seta}}</label>
+
+    <label class="tempo1-seta3">{{this.seta}}</label>
+
+    <label>{{this.tempo4_participante}}</label>
+
+    <br>
+
+    <label class="tempo1-seta1">{{this.seta}}</label>
+
+    <label class="tempo1-seta2">{{this.seta}}</label>
+
+    <label class="tempo1-seta3">{{this.seta}}</label>
+
+    <label class="tempo1-seta4">{{this.seta}}</label>
+
+    <label>{{this.tempo5_participante}}</label>
+
+    <br>
+
+    <label class="tempo1-seta1">{{this.seta}}</label>
+
+    <label class="tempo1-seta2">{{this.seta}}</label>
+
+    <label class="tempo1-seta3">{{this.seta}}</label>
+
+    <label class="tempo1-seta4">{{this.seta}}</label>
+
+    <label class="tempo1-seta5">{{this.seta}}</label>
+
+
+    <progress-bar [progress]="loadProgress3"></progress-bar>
+  </div>
+  <br>
+
+  <div align="center">
+
+    <button ion-button round color="danger" (click)="stopCounter()">PARAR CONTADOR*</button>
+
+  </div>
+
+</ion-content>

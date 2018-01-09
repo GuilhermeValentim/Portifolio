@@ -1,0 +1,71 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Pomodoro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div align="center">
+
+    <ion-item>
+      <ion-label>Nome da Tarefa</ion-label>
+      <ion-input type="text" [(ngModel)]="this.tarefa"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Pomodoros Estimados</ion-label>
+      <ion-select [(ngModel)]="pomodoro">
+        <ion-option value="2">2 Pomodoros</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </div>
+
+  <br>
+
+  <div align="center">
+
+    <button ion-button round color="secondary" (click)="startPomodoro1()">COMEÇAR!</button>
+
+  </div>
+
+  <br>
+  <!-- BARRA TEMPO TOTAL -->
+  <div align="center">
+    <label> Tempo Total: 25 minutos</label>
+    <progress-bar-red [progress]="loadProgress"></progress-bar-red>
+  </div>
+
+
+  <!-- BARRA DE DESCANSO -->
+  <div align="center">
+    <label>Tempo de Descanso: 5 Minutos</label>
+    <progress-bar-red [progress]="loadProgress2"></progress-bar-red>
+
+  </div>
+
+  <!-- NOME DA TAREFA -->
+  <div align="center">
+
+    <h5>{{tarefa}}</h5>
+
+  </div>
+
+
+
+  <!-- POMODORO: 1 -->
+  <br>
+  <img src="assets/icon/tomato24.png">
+  <label>1</label>
+  <progress-bar-red [progress]="loadProgress3"></progress-bar-red>
+
+  <!-- POMODORO: 2  -->
+  <br>
+  <img src="assets/icon/tomato24.png">
+  <label>2</label>
+  <progress-bar-red [progress]="loadProgress4"></progress-bar-red>
+
+</ion-content>
