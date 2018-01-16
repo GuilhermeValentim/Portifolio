@@ -34,12 +34,7 @@ var PomodoroPage = (function () {
         }
         else {
             // TEMPO TOTAL
-            setInterval(function () {
-                if (_this.loadProgress < 100) {
-                    _this.loadProgress++;
-                    _this.startDescanso();
-                }
-            }, 100); //25 MINUTOS! ****
+            this.startTempoTotal();
             // POMODORO 1
             setInterval(function () {
                 if (_this.loadProgress3 < 100) {
@@ -48,18 +43,27 @@ var PomodoroPage = (function () {
             }, 100); //25 MINUTOS! ****
         }
     };
+    PomodoroPage.prototype.startTempoTotal = function () {
+        var _this = this;
+        setInterval(function () {
+            if (_this.loadProgress < 100) {
+                _this.loadProgress++;
+                _this.startDescanso();
+            }
+        }, 100); //25 MINUTOS! ****
+    };
     PomodoroPage.prototype.startDescanso = function () {
         var _this = this;
         if (this.loadProgress == 100) {
             setInterval(function () {
                 if (_this.loadProgress2 < 100) {
                     _this.loadProgress2++;
-                    _this.start2Pomodoro();
+                    _this.startPomodoro2();
                 }
             }, 100); //5 MINUTOS! ****
         }
     };
-    PomodoroPage.prototype.start2Pomodoro = function () {
+    PomodoroPage.prototype.startPomodoro2 = function () {
         var _this = this;
         // POMODORO 2
         if (this.loadProgress2 == 100) {
@@ -75,10 +79,9 @@ var PomodoroPage = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-pomodoro',template:/*ion-inline-start:"/home/guilherme/workspaces/ionic/TudoAgil/src/pages/pomodoro/pomodoro.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Pomodoro</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div align="center">\n\n    <ion-item>\n      <ion-label>Nome da Tarefa</ion-label>\n      <ion-input type="text" [(ngModel)]="this.tarefa"></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Pomodoros Estimados</ion-label>\n      <ion-select [(ngModel)]="pomodoro">\n        <ion-option value="2">2 Pomodoros</ion-option>\n      </ion-select>\n    </ion-item>\n\n  </div>\n\n  <br>\n\n  <div align="center">\n\n    <button ion-button round color="secondary" (click)="startPomodoro1()">COMEÇAR!</button>\n\n  </div>\n\n  <br>\n  <!-- BARRA TEMPO TOTAL -->\n  <div align="center">\n    <label> Tempo Total: 25 minutos</label>\n    <progress-bar-red [progress]="loadProgress"></progress-bar-red>\n  </div>\n\n\n  <!-- BARRA DE DESCANSO -->\n  <div align="center">\n    <label>Tempo de Descanso: 5 Minutos</label>\n    <progress-bar-red [progress]="loadProgress2"></progress-bar-red>\n\n  </div>\n\n  <!-- NOME DA TAREFA -->\n  <div align="center">\n\n    <h5>{{tarefa}}</h5>\n\n  </div>\n\n\n\n  <!-- POMODORO: 1 -->\n  <br>\n  <img src="assets/icon/tomato24.png">\n  <label>1</label>\n  <progress-bar-red [progress]="loadProgress3"></progress-bar-red>\n\n  <!-- POMODORO: 2  -->\n  <br>\n  <img src="assets/icon/tomato24.png">\n  <label>2</label>\n  <progress-bar-red [progress]="loadProgress4"></progress-bar-red>\n\n</ion-content>'/*ion-inline-end:"/home/guilherme/workspaces/ionic/TudoAgil/src/pages/pomodoro/pomodoro.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], PomodoroPage);
     return PomodoroPage;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=pomodoro.js.map
