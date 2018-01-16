@@ -22,12 +22,7 @@ export class PomodoroPage {
     if (this.tarefa == "") {
     } else {
       // TEMPO TOTAL
-      setInterval(() => {
-        if (this.loadProgress < 100) {
-          this.loadProgress++;
-          this.startDescanso();
-        }
-      }, 100); //25 MINUTOS! ****
+      this.startTempoTotal();
 
       // POMODORO 1
       setInterval(() => {
@@ -38,18 +33,29 @@ export class PomodoroPage {
     }
   }
 
+
+  public startTempoTotal(){
+    setInterval(() => {
+      if (this.loadProgress < 100) {
+        this.loadProgress++;
+        this.startDescanso();
+      }
+    }, 100); //25 MINUTOS! ****
+  }
+
+  
   public startDescanso() {
     if (this.loadProgress == 100) {
       setInterval(() => {
         if (this.loadProgress2 < 100) {
           this.loadProgress2++;
-          this.start2Pomodoro();
+          this.startPomodoro2();
         }
       }, 100); //5 MINUTOS! ****
     }
   }
 
-  public start2Pomodoro() {
+  public startPomodoro2() {
     // POMODORO 2
     if (this.loadProgress2 == 100) {
       setInterval(() => {
