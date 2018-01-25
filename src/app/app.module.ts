@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { StandUpPage } from '../pages/stand-up/stand-up';
 import { PlanningPokerPage } from "../pages/planning-poker/planning-poker";
 import { PomodoroPage } from "../pages/pomodoro/pomodoro";
+import { NumbersPage } from "../pages/numbers/numbers";
 
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { ProgressBarComponentRed } from "../components/progress-bar-red/progress-bar-red";
@@ -23,7 +24,8 @@ import { ProgressBarComponentRed } from "../components/progress-bar-red/progress
     PlanningPokerPage,
     PomodoroPage, 
     ProgressBarComponent,
-    ProgressBarComponentRed
+    ProgressBarComponentRed,
+    NumbersPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { ProgressBarComponentRed } from "../components/progress-bar-red/progress
     HomePage,
     StandUpPage,
     PlanningPokerPage,
-    PomodoroPage
+    PomodoroPage,
+    NumbersPage
   ],
   providers: [
     StatusBar,
