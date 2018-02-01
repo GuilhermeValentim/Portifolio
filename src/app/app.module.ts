@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { StandUpPage } from '../pages/stand-up/stand-up';
 import { PlanningPokerPage } from "../pages/planning-poker/planning-poker";
 import { PomodoroPage } from "../pages/pomodoro/pomodoro";
+import { AboutPage } from "../pages/about/about";
 
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 import { ProgressBarComponentRed } from "../components/progress-bar-red/progress-bar-red";
@@ -21,7 +22,8 @@ import { IonicImageViewerModule } from 'ionic-img-viewer';
     HomePage,
     StandUpPage,
     PlanningPokerPage,
-    PomodoroPage, 
+    PomodoroPage,
+    AboutPage, 
     ProgressBarComponent,
     ProgressBarComponentRed
   ],
@@ -36,7 +38,8 @@ import { IonicImageViewerModule } from 'ionic-img-viewer';
     HomePage,
     StandUpPage,
     PlanningPokerPage,
-    PomodoroPage
+    PomodoroPage,
+    AboutPage
   ],
   providers: [
     StatusBar,
