@@ -10,7 +10,8 @@ import { AboutPage } from "../../pages/about/about";
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  cidade = "Fortaleza";
+  ano = 1997;
   constructor(public navCtrl: NavController) {}
 
   public openMeetingPage(){
@@ -25,4 +26,5 @@ export class HomePage {
   public openAboutPage(){
     this.navCtrl.push(AboutPage);
   }
+  
 }

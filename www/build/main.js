@@ -1,12 +1,14 @@
 webpackJsonp([4],{
 
-/***/ 124:
+/***/ 125:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AboutPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_moment__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,17 +20,57 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var AboutPage = (function () {
     function AboutPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.currentTime = __WEBPACK_IMPORTED_MODULE_2_moment___default()().format("H:mm:ss");
+        this.morningTime1 = __WEBPACK_IMPORTED_MODULE_2_moment___default()().format("06:00:00");
+        this.morningTime2 = __WEBPACK_IMPORTED_MODULE_2_moment___default()().format("11:59:59");
+        this.afternoonTime1 = __WEBPACK_IMPORTED_MODULE_2_moment___default()().format("12:00:00");
+        this.afternoonTime2 = __WEBPACK_IMPORTED_MODULE_2_moment___default()().format("17:59:59");
+        this.nightTime1 = __WEBPACK_IMPORTED_MODULE_2_moment___default()().format("18:00:00");
+        this.nightTime2 = __WEBPACK_IMPORTED_MODULE_2_moment___default()().format("23:59:59");
+        this.isChanged = false;
+        this.perfil = {
+            nome: "Guilherme Pimenta",
+            idade: "20 anos",
+            formacao: "Último semestre em Análise e Desenvolvimento de Sistemas",
+            foco: "Desenvolvimento Mobile"
+        };
     }
+    AboutPage.prototype.color = function () {
+        this.isChanged = true;
+    };
+    AboutPage.prototype.openObject = function () {
+        console.log();
+    };
+    /* EM PROGRESSO */
+    /* Utilizando a classe Moment para pegar o horário do dispositivo */
     AboutPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad AboutPage');
+        if (this.currentTime >= this.morningTime1 && this.currentTime < this.morningTime2) {
+            this.greetings = "Bom Dia!";
+            console.log("É mais que 6 horas da manhã! /o/");
+            this.isChanged = true;
+            this.greetingPhoto = "assets/imgs/morning.jpg";
+        }
+        else if (this.currentTime >= this.afternoonTime1 && this.currentTime < this.afternoonTime2) {
+            this.greetings = "Boa Tarde!";
+            console.log("É mais que 12 horas da tarde! /o/");
+            this.isChanged = true;
+            this.greetingPhoto = "assets/imgs/afternoon.jpg";
+        }
+        else if (this.currentTime >= this.nightTime1 && this.currentTime < this.nightTime2) {
+            this.greetings = "Boa Noite!";
+            console.log("É mais que 6 horas da noite! /o/");
+            this.isChanged = true;
+            this.greetingPhoto = "assets/imgs/night.jpg";
+        }
     };
     AboutPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-about',template:/*ion-inline-start:"/home/guilherme/workspaces/ionic/Tudo-Agil/src/pages/about/about.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Sobre o Desenvolvedor</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  <ion-card>\n    <ion-card-header>\n      Resumo sobre mim :D\n    </ion-card-header>\n\n    <ion-card-content>\n      <img src="assets/imgs/Eu.jpg">\n\n      <br> - Nome: Guilherme Pimenta;\n      <br> - Idade: 20 anos;\n      <br> - Formação Acadêmica: Último semestre em Análise e Desenvolvimento de Sistemas;\n      <br> - Foco: Desenvolvimento Mobile\n      <br> - Linguagens:\n      <ul>\n        <li> JAVA - Intermediário; </li>\n        <li> Programação para Android - Básico/Intermediário; </li>\n        <li> Ionic 3 – Básico; </li>\n        <li> C++ - Intermediário; </li>\n        <li> SQL (PostgreSQL) – Básico; </li>\n      </ul>\n      <br>\n      <p>\n        Sempre gostei de Informática e na faculdade eu encontrei meu outro amor: O Desenvolvimento Mobile.\n        <br> Procuro sempre estudar a plataforma Mobile (Android) e saber mais das ferramentas que existem por aí além de reforçar\n        os conhecimentos em POO e outros conceitos importantes.\n      </p>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header>\n      Hobbies\n    </ion-card-header>\n\n    <ion-card-content>\n      <img src="assets/imgs/Suprema2.jpg">\n      <br>\n      <ul>\n        <li>CARROS CARROS CARROS CARROS</li>\n        <li>Aprendendo Japonês</li>\n        <li>Jogo aquele CS:GO</li>\n        <li>Gravo vídeos, edito e coloco no YouTube</li>\n        <li>Toco (mal) violão</li>\n        <li></li>\n      </ul>\n\n    </ion-card-content>\n  </ion-card>\n\n\n  <ion-card>\n    <ion-card-header>\n      Contato e Redes Sociais\n    </ion-card-header>\n    <ion-card-content>\n      - Email para contato:\n      <br> guilhermevalentim5@gmail.com\n      <ion-icon name="logo-github">\n        <a href="https://github.com/GuilhermeValentim">GuilhermeValentim</a>\n      </ion-icon>\n      <br>\n      <ion-icon name="logo-facebook">\n Guilherme Valentim </ion-icon>\n      <br>\n      <ion-icon name="logo-instagram">\n        <a href="https://www.instagram.com/gui.valentim1/">gui.valentim1</a>\n      </ion-icon>\n      <br>\n    </ion-card-content>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"/home/guilherme/workspaces/ionic/Tudo-Agil/src/pages/about/about.html"*/,
+            selector: 'page-about',template:/*ion-inline-start:"/home/guilherme/workspaces/ionic/Tudo-Agil/src/pages/about/about.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Sobre o Desenvolvedor</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding [ngClass]="{\'.manha\': isChanged, \'.tarde\': isChanged, \'.noite\': isChanged}">\n\n  <ion-card>\n    <ion-card-header class="titulo">\n      {{this.greetings}}\n    </ion-card-header>\n    <ion-card-content>\n      <img src="{{this.greetingPhoto}}">\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header>\n      Resumo sobre mim :D\n    </ion-card-header>\n\n    <ion-card-content>\n      <img src="assets/imgs/Eu.jpg" (click)="openObject()">\n\n      <br> - Nome: {{perfil.nome}};\n      <br> - Idade: {{perfil.idade}};\n      <br> - Formação Acadêmica: {{perfil.formacao}};\n      <br> - Foco: {{perfil.foco}};\n      <br> - Linguagens:\n      <ul>\n        <li> JAVA - Intermediário; </li>\n        <li> Programação para Android - Básico/Intermediário; </li>\n        <li> Ionic 3 – Básico; </li>\n        <li> C++ - Intermediário; </li>\n        <li> SQL (PostgreSQL) – Básico; </li>\n      </ul>\n      <br>\n      <p>\n        Sempre gostei de Informática e na faculdade eu encontrei meu outro amor: O Desenvolvimento Mobile.\n        <br> Procuro sempre estudar a plataforma Mobile (Android) e saber mais das ferramentas que existem por aí além de reforçar\n        os conhecimentos em POO e outros conceitos importantes.\n      </p>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-header>\n      Hobbies\n    </ion-card-header>\n\n    <ion-card-content>\n      <img src="assets/imgs/Suprema2.jpg">\n      <br>\n      <ul>\n        <li>CARROS CARROS CARROS CARROS</li>\n        <li>Aprendendo Japonês</li>\n        <li>Jogo aquele CS:GO</li>\n        <li>Gravo vídeos, edito e coloco no YouTube</li>\n        <li>Toco (mal) violão</li>\n        <li></li>\n      </ul>\n\n    </ion-card-content>\n  </ion-card>\n\n\n  <ion-card>\n    <ion-card-header>\n      Contato e Redes Sociais\n    </ion-card-header>\n    <ion-card-content>\n      - Email para contato:\n      <br> guilhermevalentim5@gmail.com\n      <ion-icon name="logo-github">\n        <a href="https://github.com/GuilhermeValentim">GuilhermeValentim</a>\n      </ion-icon>\n      <br>\n      <ion-icon name="logo-facebook">\n Guilherme Valentim </ion-icon>\n      <br>\n      <ion-icon name="logo-instagram">\n        <a href="https://www.instagram.com/gui.valentim1/">gui.valentim1</a>\n      </ion-icon>\n      <br>\n    </ion-card-content>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"/home/guilherme/workspaces/ionic/Tudo-Agil/src/pages/about/about.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
     ], AboutPage);
@@ -39,13 +81,13 @@ var AboutPage = (function () {
 
 /***/ }),
 
-/***/ 125:
+/***/ 126:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PlanningPokerPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -75,13 +117,13 @@ var PlanningPokerPage = (function () {
 
 /***/ }),
 
-/***/ 126:
+/***/ 127:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PomodoroPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -163,13 +205,13 @@ var PomodoroPage = (function () {
 
 /***/ }),
 
-/***/ 127:
+/***/ 128:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StandUpPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -250,7 +292,7 @@ var StandUpPage = (function () {
 
 /***/ }),
 
-/***/ 138:
+/***/ 139:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -263,28 +305,28 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 138;
+webpackEmptyAsyncContext.id = 139;
 
 /***/ }),
 
-/***/ 180:
+/***/ 181:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/about/about.module": [
-		412,
+		534,
 		3
 	],
 	"../pages/planning-poker/planning-poker.module": [
-		413,
+		535,
 		2
 	],
 	"../pages/pomodoro/pomodoro.module": [
-		414,
+		536,
 		1
 	],
 	"../pages/stand-up/stand-up.module": [
-		415,
+		537,
 		0
 	]
 };
@@ -299,22 +341,22 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 180;
+webpackAsyncContext.id = 181;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 225:
+/***/ 345:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_stand_up_stand_up__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_planning_poker_planning_poker__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_pomodoro_pomodoro__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_about_about__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pages_stand_up_stand_up__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pages_planning_poker_planning_poker__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_pomodoro_pomodoro__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_about_about__ = __webpack_require__(125);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -333,6 +375,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var HomePage = (function () {
     function HomePage(navCtrl) {
         this.navCtrl = navCtrl;
+        this.cidade = "Fortaleza";
+        this.ano = 1997;
     }
     HomePage.prototype.openMeetingPage = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__pages_stand_up_stand_up__["a" /* StandUpPage */]);
@@ -345,27 +389,29 @@ var HomePage = (function () {
     };
     HomePage.prototype.openAboutPage = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__pages_about_about__["a" /* AboutPage */]);
+        console.log("Eu nasci na cidade " + this.cidade + " no ano de " + this.ano);
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/guilherme/workspaces/ionic/Tudo-Agil/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Página Inicial\n    </ion-title>\n    \n    <ion-buttons end>\n      <button ion-button icon-only (click)="openAboutPage()">\n        <ion-icon name="md-alert">\n Sobre</ion-icon>\n      </button>\n    </ion-buttons>\n  \n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-card>\n    <img (click)="openMeetingPage()" src="assets/imgs/standUpMeeting.jpg" width="50" height="200" />\n    <div class="card-title">Stand Up Meeting</div>\n  </ion-card>\n\n  <ion-card>\n    <img (click)="openPomodoroPage()" src="assets/imgs/pomodoro.jpg" width="50" height="200" />\n    <div class="card-title-Pomodoro">Pomodoro</div>\n  </ion-card>\n\n  <ion-card>\n    <img (click)="openPokerPage()" src="assets/imgs/planningPoker.jpg" width="50" height="200" />\n    <div class="card-title">Plaining Poker</div>\n  </ion-card>\n\n  <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>\n</ion-content>'/*ion-inline-end:"/home/guilherme/workspaces/ionic/Tudo-Agil/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/home/guilherme/workspaces/ionic/Tudo-Agil/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Página Inicial\n    </ion-title>\n\n    <ion-buttons end>\n      <button ion-button icon-only (click)="openAboutPage()">\n        <ion-icon name="md-alert">\n Sobre</ion-icon>\n      </button>\n    </ion-buttons>\n\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-card>\n    <img (click)="openMeetingPage()" src="assets/imgs/standUpMeeting.jpg" width="50" height="200" />\n    <div class="card-title">Stand Up Meeting</div>\n  </ion-card>\n\n  <ion-card>\n    <img (click)="openPomodoroPage()" src="assets/imgs/pomodoro.jpg" width="50" height="200" />\n    <div class="card-title-Pomodoro">Pomodoro</div>\n  </ion-card>\n\n  <ion-card>\n    <img (click)="openPokerPage()" src="assets/imgs/planningPoker.jpg" width="50" height="200" />\n    <div class="card-title">Plaining Poker</div>\n  </ion-card>\n\n  <div>Icons made by\n    <a href="http://www.freepik.com" title="Freepik">Freepik</a> from\n    <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by\n    <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"\n      target="_blank">CC 3.0 BY</a>\n  </div>\n</ion-content>'/*ion-inline-end:"/home/guilherme/workspaces/ionic/Tudo-Agil/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _a || Object])
     ], HomePage);
     return HomePage;
+    var _a;
 }());
 
 //# sourceMappingURL=home.js.map
 
 /***/ }),
 
-/***/ 247:
+/***/ 367:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(248);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(368);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(377);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -373,25 +419,25 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 257:
+/***/ 377:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(304);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(225);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_stand_up_stand_up__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_planning_poker_planning_poker__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_pomodoro_pomodoro__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_about_about__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_progress_bar_progress_bar__ = __webpack_require__(305);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_progress_bar_red_progress_bar_red__ = __webpack_require__(306);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ionic_img_viewer__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(344);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(426);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(345);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_stand_up_stand_up__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_planning_poker_planning_poker__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_pomodoro_pomodoro__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_about_about__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_progress_bar_progress_bar__ = __webpack_require__(427);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_progress_bar_red_progress_bar_red__ = __webpack_require__(428);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ionic_img_viewer__ = __webpack_require__(429);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -462,16 +508,277 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 304:
+/***/ 401:
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": 182,
+	"./af.js": 182,
+	"./ar": 183,
+	"./ar-dz": 184,
+	"./ar-dz.js": 184,
+	"./ar-kw": 185,
+	"./ar-kw.js": 185,
+	"./ar-ly": 186,
+	"./ar-ly.js": 186,
+	"./ar-ma": 187,
+	"./ar-ma.js": 187,
+	"./ar-sa": 188,
+	"./ar-sa.js": 188,
+	"./ar-tn": 189,
+	"./ar-tn.js": 189,
+	"./ar.js": 183,
+	"./az": 190,
+	"./az.js": 190,
+	"./be": 191,
+	"./be.js": 191,
+	"./bg": 192,
+	"./bg.js": 192,
+	"./bm": 193,
+	"./bm.js": 193,
+	"./bn": 194,
+	"./bn.js": 194,
+	"./bo": 195,
+	"./bo.js": 195,
+	"./br": 196,
+	"./br.js": 196,
+	"./bs": 197,
+	"./bs.js": 197,
+	"./ca": 198,
+	"./ca.js": 198,
+	"./cs": 199,
+	"./cs.js": 199,
+	"./cv": 200,
+	"./cv.js": 200,
+	"./cy": 201,
+	"./cy.js": 201,
+	"./da": 202,
+	"./da.js": 202,
+	"./de": 203,
+	"./de-at": 204,
+	"./de-at.js": 204,
+	"./de-ch": 205,
+	"./de-ch.js": 205,
+	"./de.js": 203,
+	"./dv": 206,
+	"./dv.js": 206,
+	"./el": 207,
+	"./el.js": 207,
+	"./en-au": 208,
+	"./en-au.js": 208,
+	"./en-ca": 209,
+	"./en-ca.js": 209,
+	"./en-gb": 210,
+	"./en-gb.js": 210,
+	"./en-ie": 211,
+	"./en-ie.js": 211,
+	"./en-nz": 212,
+	"./en-nz.js": 212,
+	"./eo": 213,
+	"./eo.js": 213,
+	"./es": 214,
+	"./es-do": 215,
+	"./es-do.js": 215,
+	"./es-us": 216,
+	"./es-us.js": 216,
+	"./es.js": 214,
+	"./et": 217,
+	"./et.js": 217,
+	"./eu": 218,
+	"./eu.js": 218,
+	"./fa": 219,
+	"./fa.js": 219,
+	"./fi": 220,
+	"./fi.js": 220,
+	"./fo": 221,
+	"./fo.js": 221,
+	"./fr": 222,
+	"./fr-ca": 223,
+	"./fr-ca.js": 223,
+	"./fr-ch": 224,
+	"./fr-ch.js": 224,
+	"./fr.js": 222,
+	"./fy": 225,
+	"./fy.js": 225,
+	"./gd": 226,
+	"./gd.js": 226,
+	"./gl": 227,
+	"./gl.js": 227,
+	"./gom-latn": 228,
+	"./gom-latn.js": 228,
+	"./gu": 229,
+	"./gu.js": 229,
+	"./he": 230,
+	"./he.js": 230,
+	"./hi": 231,
+	"./hi.js": 231,
+	"./hr": 232,
+	"./hr.js": 232,
+	"./hu": 233,
+	"./hu.js": 233,
+	"./hy-am": 234,
+	"./hy-am.js": 234,
+	"./id": 235,
+	"./id.js": 235,
+	"./is": 236,
+	"./is.js": 236,
+	"./it": 237,
+	"./it.js": 237,
+	"./ja": 238,
+	"./ja.js": 238,
+	"./jv": 239,
+	"./jv.js": 239,
+	"./ka": 240,
+	"./ka.js": 240,
+	"./kk": 241,
+	"./kk.js": 241,
+	"./km": 242,
+	"./km.js": 242,
+	"./kn": 243,
+	"./kn.js": 243,
+	"./ko": 244,
+	"./ko.js": 244,
+	"./ky": 245,
+	"./ky.js": 245,
+	"./lb": 246,
+	"./lb.js": 246,
+	"./lo": 247,
+	"./lo.js": 247,
+	"./lt": 248,
+	"./lt.js": 248,
+	"./lv": 249,
+	"./lv.js": 249,
+	"./me": 250,
+	"./me.js": 250,
+	"./mi": 251,
+	"./mi.js": 251,
+	"./mk": 252,
+	"./mk.js": 252,
+	"./ml": 253,
+	"./ml.js": 253,
+	"./mr": 254,
+	"./mr.js": 254,
+	"./ms": 255,
+	"./ms-my": 256,
+	"./ms-my.js": 256,
+	"./ms.js": 255,
+	"./mt": 257,
+	"./mt.js": 257,
+	"./my": 258,
+	"./my.js": 258,
+	"./nb": 259,
+	"./nb.js": 259,
+	"./ne": 260,
+	"./ne.js": 260,
+	"./nl": 261,
+	"./nl-be": 262,
+	"./nl-be.js": 262,
+	"./nl.js": 261,
+	"./nn": 263,
+	"./nn.js": 263,
+	"./pa-in": 264,
+	"./pa-in.js": 264,
+	"./pl": 265,
+	"./pl.js": 265,
+	"./pt": 266,
+	"./pt-br": 267,
+	"./pt-br.js": 267,
+	"./pt.js": 266,
+	"./ro": 268,
+	"./ro.js": 268,
+	"./ru": 269,
+	"./ru.js": 269,
+	"./sd": 270,
+	"./sd.js": 270,
+	"./se": 271,
+	"./se.js": 271,
+	"./si": 272,
+	"./si.js": 272,
+	"./sk": 273,
+	"./sk.js": 273,
+	"./sl": 274,
+	"./sl.js": 274,
+	"./sq": 275,
+	"./sq.js": 275,
+	"./sr": 276,
+	"./sr-cyrl": 277,
+	"./sr-cyrl.js": 277,
+	"./sr.js": 276,
+	"./ss": 278,
+	"./ss.js": 278,
+	"./sv": 279,
+	"./sv.js": 279,
+	"./sw": 280,
+	"./sw.js": 280,
+	"./ta": 281,
+	"./ta.js": 281,
+	"./te": 282,
+	"./te.js": 282,
+	"./tet": 283,
+	"./tet.js": 283,
+	"./th": 284,
+	"./th.js": 284,
+	"./tl-ph": 285,
+	"./tl-ph.js": 285,
+	"./tlh": 286,
+	"./tlh.js": 286,
+	"./tr": 287,
+	"./tr.js": 287,
+	"./tzl": 288,
+	"./tzl.js": 288,
+	"./tzm": 289,
+	"./tzm-latn": 290,
+	"./tzm-latn.js": 290,
+	"./tzm.js": 289,
+	"./uk": 291,
+	"./uk.js": 291,
+	"./ur": 292,
+	"./ur.js": 292,
+	"./uz": 293,
+	"./uz-latn": 294,
+	"./uz-latn.js": 294,
+	"./uz.js": 293,
+	"./vi": 295,
+	"./vi.js": 295,
+	"./x-pseudo": 296,
+	"./x-pseudo.js": 296,
+	"./yo": 297,
+	"./yo.js": 297,
+	"./zh-cn": 298,
+	"./zh-cn.js": 298,
+	"./zh-hk": 299,
+	"./zh-hk.js": 299,
+	"./zh-tw": 300,
+	"./zh-tw.js": 300
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 401;
+
+/***/ }),
+
+/***/ 426:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(344);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(341);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(345);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -508,7 +815,7 @@ var MyApp = (function () {
 
 /***/ }),
 
-/***/ 305:
+/***/ 427:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -544,7 +851,7 @@ var ProgressBarComponent = (function () {
 
 /***/ }),
 
-/***/ 306:
+/***/ 428:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -580,5 +887,5 @@ var ProgressBarComponentRed = (function () {
 
 /***/ })
 
-},[247]);
+},[367]);
 //# sourceMappingURL=main.js.map

@@ -25788,6 +25788,28 @@ progress-bar-red .progress-inner {
   background-color: red;
 }
 
+page-about .masters {
+  background-color: gray;
+}
+
+page-about .manha {
+  background-color: lightblue;
+}
+
+page-about .tarde {
+  background-color: #fd9616;
+}
+
+page-about .noite {
+  background-color: #171616;
+}
+
+page-about .titulo {
+  -webkit-margin-start: 100px;
+  -moz-margin-start: 100px;
+  margin-inline-start: 100px;
+}
+
 page-home ion-card {
   position: relative;
   text-align: center;
