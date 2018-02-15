@@ -3,19 +3,29 @@
     <ion-title>Sobre o Desenvolvedor</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
+<ion-content padding [ngClass]="{'.manha': isChanged, '.tarde': isChanged, '.noite': isChanged}">
+
+  <ion-card>
+    <ion-card-header class="titulo">
+      {{this.greetings}}
+    </ion-card-header>
+    <ion-card-content>
+      <img src="{{this.greetingPhoto}}">
+    </ion-card-content>
+  </ion-card>
+
   <ion-card>
     <ion-card-header>
       Resumo sobre mim :D
     </ion-card-header>
 
     <ion-card-content>
-      <img src="assets/imgs/Eu.jpg">
+      <img src="assets/imgs/Eu.jpg" (click)="openObject()">
 
-      <br> - Nome: Guilherme Pimenta;
-      <br> - Idade: 20 anos;
-      <br> - Formação Acadêmica: Último semestre em Análise e Desenvolvimento de Sistemas;
-      <br> - Foco: Desenvolvimento Mobile
+      <br> - Nome: {{perfil.nome}};
+      <br> - Idade: {{perfil.idade}};
+      <br> - Formação Acadêmica: {{perfil.formacao}};
+      <br> - Foco: {{perfil.foco}};
       <br> - Linguagens:
       <ul>
         <li> JAVA - Intermediário; </li>
